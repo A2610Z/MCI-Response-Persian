@@ -2,10 +2,20 @@ $(document).ready(function () {
     let responseList = [];
     let table;
 
-    // Load JSON and initialize DataTable
-    $.getJSON("./MCI-behsa-response.json", function (data) {
-        responseList = data.data;
+    // Load and compare both JSON files
+    $.when(
+        $.getJSON("./Products.json"),
+        $.getJSON("./MCI-behsa-response.json")
+    ).done(function (productsData, mciData) {
+        const products = productsData[0].Result || [];
+        const mciRawData = mciData[0].data || [];
 
+        const orderingIDs = new Set(products.map(p => String(p.OrderingID)));
+
+        // Filter out any MCI items where Id matches an OrderingID
+        responseList = mciRawData.filter(item => !orderingIDs.has(String(item.Id)));
+
+        // Initialize the DataTable with filtered data
         table = new DataTable("#response", {
             data: responseList,
             processing: true,
@@ -96,7 +106,7 @@ $(document).ready(function () {
         const timestamp = new Date().toISOString().slice(0, 19).replace(/[:T]/g, "-");
 
         link.href = URL.createObjectURL(blob);
-        link.download = `data-${timestamp}.json`;
+        link.download = `filtered-data-${timestamp}.json`;
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
