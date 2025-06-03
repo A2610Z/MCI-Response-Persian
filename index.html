@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MCI Response</title>
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="CSS/bootstrap.rtl.min.css" />
+  <link rel="stylesheet" href="CSS/dataTables.bootstrap5.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link rel="stylesheet" href="CSS/style.css" />
+</head>
+
+<body>
+  <!-- Action Buttons -->
+  <div class="btn-group btn-group-lg mt-2" role="group">
+    <button type="button" class="btn btn-outline-dark" id="upload-json-button">
+      <i class="bi bi-cloud-arrow-up"></i> بارگذاری فایل JSON
+    </button>
+    <input type="file" id="upload-json-file" accept=".json" hidden />
+    <button type="button" class="btn btn-outline-dark" id="download-json-button">
+      <i class="bi bi-cloud-arrow-down"></i> دانلود فایل JSON
+    </button>
+  </div>
+
+  <!-- Table -->
+  <table id="response" class="table table-striped caption-top table-bordered border-dark table-sm display nowrap">
+    <caption>MCI Response</caption>
+    <thead class="table-dark">
+      <tr>
+        <th>Id</th> <!-- 0 -->
+        <th>Title</th> <!-- 1 -->
+        <th>DetailTitle</th> <!-- 2 -->
+        <th>ChargeType</th> <!-- 3 -->
+        <th>ChargeAmount</th> <!-- 4 -->
+        <th>GiftAmount</th> <!-- 5 -->
+        <th>Amount</th> <!-- 6 -->
+        <th>ProductId</th> <!-- 7 -->
+        <th>ProductTitle</th> <!-- 8 -->
+        <th>Volume</th> <!-- 9 -->
+        <th>System</th> <!-- 10 -->
+        <th>Duration</th> <!-- 11 -->
+        <th>AmountWithTax</th> <!-- 12 -->
+        <th>ProductCategoryId</th> <!-- 13 -->
+        <th>ProductCategoryName</th> <!-- 14 -->
+        <th>SubCategoryId</th> <!-- 15 -->
+        <th>SubCategoryName</th> <!-- 16 -->
+        <th>DurationUnit</th> <!-- 17 -->
+        <th>DurationName</th> <!-- 18 -->
+        <th>OfferCode</th> <!-- 19 -->
+        <th>DIYProperty</th> <!-- 20 -->
+        <th>CategoryId</th> <!-- 21 -->
+        <th>ServiceTypeDesc</th> <!-- 22 -->
+        <th>ServiceType</th> <!-- 23 -->
+        <th>brokerId</th> <!-- 24 -->
+        <th>customerId</th> <!-- 25 -->
+        <th>vendorId</th> <!-- 26 -->
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <!-- Scripts -->
+  <script src="JS/jquery-3.7.1.js"></script>
+  <script src="JS/bootstrap.bundle.min.js"></script>
+  <script src="JS/dataTables.js"></script>
+  <script src="JS/dataTables.bootstrap5.js"></script>
+  <script src="JS/script.js"></script>
+</body>
+
+</html>

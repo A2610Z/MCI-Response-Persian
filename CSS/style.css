@@ -1,0 +1,32 @@
+* {
+    font-weight: bold;
+    text-align: center;
+}
+
+body {
+    font: 90%/1.45em "Helvetica Neue", HelveticaNeue, Verdana, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #fff;
+  }
+
+  div.dt-container {
+    margin: 0 auto;
+    width: 95%;
+}
+
+.inline-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 0.4em;
+    flex-wrap: wrap;
+}
+
+.inline-buttons button {
+    margin: 0.2em 0;
+}
+
+#large-button-icon {
+    margin-right: 0.7em;
+}
